@@ -1,3 +1,4 @@
+import XLSX from 'xlsx';
 export let inputSanitisation = {
 	//  Copies the value in a merged cell to every value in the merge
 	//  and remove the merge

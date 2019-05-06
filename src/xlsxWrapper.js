@@ -1,5 +1,6 @@
 import { inputSanitisation, calculators } from './utils.js';
 import XLSX from 'xlsx';
+import Mustache from 'mustache';
 
 export class XLSX_Wrapper {
 	constructor(file) {

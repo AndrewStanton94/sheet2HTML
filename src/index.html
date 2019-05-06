@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Sheet2HTML</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+		<script src="https://unpkg.com/xlsx@0.14.2/dist/xlsx.full.min.js"></script>
+		<script src="https://unpkg.com/mustache@3.0.1/mustache.min.js"></script>
+	</head>
+
+	<body>
+		<h1>Sheet2HTML</h1>
+
+		<section id="submitSection">
+			<h2>Submit spreadsheet</h2>
+			<div id="spreadsheetDropArea">Drop here</div>
+		</section>
+
+		<section id="previewSection" class="hidden">
+			<h2>Preview</h2>
+			<form id="sheetPreviewForm">
+				<label for="sheetSelection">Choose a sheet</label>
+				<select name="sheetSelection" id="sheetSelection">
+					<option value="placeholder"
+						>Submit a spreadsheet to choose a sheet.</option
+					>
+				</select>
+				<button type="submit">Preview this sheet</button>
+			</form>
+			<div id="preview"></div>
+		</section>
+
+		<section id="headerSection" class="hidden">
+			<h2>Headers</h2>
+			<form id="headerRowCountForm">
+				<label for="headerRowCountInput"
+					>How many rows are headers?</label
+				>
+				<input
+					type="number"
+					name="headerRowCountInput"
+					id="headerRowCountInput"
+				/>
+				<button type="submit">Process headers</button>
+			</form>
+		</section>
+
+		<section id="templateSection" class="hidden">
+			<h2>Template</h2>
+
+			<form id="templateForm">
+				<textarea
+					name="templateText"
+					id="templateText"
+					cols="120"
+					rows="10"
+				></textarea>
+				<button type="submit">Generate data</button>
+			</form>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+#spreadsheetDropArea {
+	padding: 1em;
+	border: 5px solid black;
+	background-color: #ccc;
+}
+
+#preview {
+	width: 90%;
+	height: 50em;
+	overflow: scroll;
+}
+
+.hidden {
+    display: none;
+}

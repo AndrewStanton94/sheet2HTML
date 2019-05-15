@@ -4,10 +4,10 @@
 	"description": "A tool to take a spreadsheet and a template and produce the relevant data from it",
 	"scripts": {
 		"build": "webpack --config webpack.config.js",
-		"watch": "webpack --watch --config webpack.config.js",
 		"start": "webpack-dev-server",
 		"lint": "eslint src/**",
-		"test": "jest"
+		"test": "jest --watch",
+		"test:coverage": "jest --collectCoverage"
 	},
 	"author": "Andrew Staton (up683693@myport.ac.uk)",
 	"license": "ISC",

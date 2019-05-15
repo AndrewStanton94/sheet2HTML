@@ -1,4 +1,5 @@
 import { XLSX_Wrapper } from './xlsxWrapper.js';
+import { produceDataFromTemplate } from './template';
 let spreadsheet;
 
 const spreadsheetDropArea = document.getElementById('spreadsheetDropArea');
@@ -65,7 +66,9 @@ document
 // Uses mustache template to produce data
 document.getElementById('templateForm').addEventListener('submit', (e) => {
 	e.preventDefault();
-	// let templatedData = spreadsheet.produceSheetFromTemplate(
-	// 	document.getElementById('templateText').value
-	// );
+	let templatedData = produceDataFromTemplate(
+		document.getElementById('templateText').value,
+		spreadsheet.sheet_to_json
+	);
+	XLSX_Wrapper.exportData(templatedData);
 });

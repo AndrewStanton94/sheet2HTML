@@ -1,13 +1,11 @@
 import { inputSanitisation, calculators } from './utils.js';
 import XLSX from 'xlsx';
-import Mustache from 'mustache';
 
 export class XLSX_Wrapper {
 	constructor(file) {
 		this.workbook = XLSX.read(file, {
 			type: 'array',
 		});
-		window.workbook = this.workbook;
 	}
 
 	get sheets() {
@@ -102,7 +100,13 @@ export class XLSX_Wrapper {
 		return json;
 	}
 
-	produceSheetFromTemplate(template) {
-		return this.sheet_to_json.map((row) => Mustache.render(template, row));
+	static exportData(jsonData) {
+		let exportWorkbook = XLSX.utils.book_new();
+		XLSX.utils.book_append_sheet(
+			exportWorkbook,
+			XLSX.utils.json_to_sheet(jsonData),
+			'Data Export'
+		);
+		XLSX.writeFile(exportWorkbook, 'out.xlsx');
 	}
 }

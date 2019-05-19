@@ -1,3 +1,5 @@
+import 'bulma/css/bulma.css';
+
 import { XLSX_Wrapper } from './xlsxWrapper.js';
 import { produceDataFromTemplate } from './template';
 let spreadsheet;
@@ -45,23 +47,23 @@ spreadsheetDropArea.addEventListener('dragover', handleDragover, false);
 document.getElementById('sheetPreviewForm').addEventListener('submit', (e) => {
 	e.preventDefault();
 	spreadsheet.selectedSheet = sheetSelection.value;
-	document.getElementById('preview').innerHTML =
-		spreadsheet.sheet_to_html.outerHTML;
+	const previewCode = spreadsheet.sheet_to_html;
+	const previewElem = document.getElementById('preview');
 
+	previewCode.classList.add('table', 'is-striped');
+	previewElem.innerHTML = previewCode.outerHTML;
+
+	previewElem.classList.remove('hidden');
 	document.getElementById('headerSection').classList.remove('hidden');
 });
 
 // Processes the headers
-document
-	.getElementById('headerRowCountForm')
-	.addEventListener('submit', (e) => {
-		e.preventDefault();
-		spreadsheet.headerRowCount = parseInt(
-			document.getElementById('headerRowCountInput').value
-		);
-		spreadsheet.clarifyHeaders();
-		document.getElementById('templateSection').classList.remove('hidden');
-	});
+document.getElementById('headerRowCountForm').addEventListener('submit', (e) => {
+	e.preventDefault();
+	spreadsheet.headerRowCount = parseInt(document.getElementById('headerRowCountInput').value);
+	spreadsheet.clarifyHeaders();
+	document.getElementById('templateSection').classList.remove('hidden');
+});
 
 // Uses mustache template to produce data
 document.getElementById('templateForm').addEventListener('submit', (e) => {

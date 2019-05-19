@@ -13,3 +13,7 @@
 .hidden {
 	display: none;
 }
+
+kbd {
+	white-space: nowrap;
+}

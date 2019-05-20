@@ -7,10 +7,19 @@ So far it can:
 * Accept a dropped XLSX file
 * Preview the data
 * Unmerge cells (copying the data into each cell)
-* Reduce multiple header rows (user specified) into 1
+* Reduce multiple header rows (user specified) into 1 row
 * Generate data using mustache templates
+* Save the modified file to the Downloads file
 
 It needs to:
-* Output the results. This should be prettymuch boilerplate. Waiting on the issue below.
-* Provide a nice way of filtering and selecting the data needed
-* Rename headers in the output
+* Provide a way to filter and select the columns to display
+* Rename column headers, file name and sheet name in the output
+* Output in other formats
+* Support functions | utilities for
+    * Articles (use a | an) correctly
+    * Stripping whitespace
+    * Case transformations
+* Be able to compare versions
+    * Submit multiple files at the same time
+    * Save old versions in the browser
+* Join multiple files together

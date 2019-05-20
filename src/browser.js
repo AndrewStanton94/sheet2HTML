@@ -1,4 +1,5 @@
 import 'bulma/css/bulma.css';
+import './main.css';
 
 import { XLSX_Wrapper } from './xlsxWrapper.js';
 import { produceDataFromTemplate } from './template';

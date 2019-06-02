@@ -114,7 +114,6 @@ export class XLSX_Wrapper {
 			indexCell.innerText = `${i + 1}`;
 			row.insertAdjacentElement('afterbegin', indexCell);
 		});
-		document.table = table;
 		return table;
 	}
 
